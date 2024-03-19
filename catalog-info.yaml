@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: burning-hoverfly-go-gitops
+  description: This is GitOps manifest for burning-hoverfly-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: burning-hoverfly-go
+    janus-idp.io/tekton: burning-hoverfly-go 
+    backstage.io/kubernetes-id: burning-hoverfly-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:burning-hoverfly-go

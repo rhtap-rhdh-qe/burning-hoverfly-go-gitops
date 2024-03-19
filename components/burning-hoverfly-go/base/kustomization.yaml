@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: burning-hoverfly-go
+  janus-idp.io/tekton: burning-hoverfly-go
+  backstage.io/kubernetes-id: burning-hoverfly-go
+  backstage.io/kubernetes-namespace: rhtap-e2e-ci 
+  app.kubernetes.io/part-of: burning-hoverfly-go
+resources: 
+- deployment.yaml
+- route.yaml
+- service.yaml
